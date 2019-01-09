@@ -9,7 +9,7 @@ class Item extends Component {
         }
     }
     componentDidMount() {
-        fetch("http://reader-rookiez-scans.com.br/api.php?title_name=Capture&chapter=2")
+        fetch("https://reader-rookiez-scans.com.br/api.php?title_name=Capture&chapter=2")
         .then(results => {
             return results.json();
         }).then(data => {
