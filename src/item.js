@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class Item extends Component {
 
@@ -9,7 +10,7 @@ class Item extends Component {
         }
     }
     componentDidMount() {
-        fetch("https://reader-rookiez-scans.com.br/api.php?title_name=Capture&chapter=2")
+        fetch("https://reader-rookiez-scans.com.br/api.php?title_name=Capture&chapter=4")
         .then(results => {
             return results.json();
         }).then(data => {
@@ -19,10 +20,10 @@ class Item extends Component {
                     <div>
                         <p>{data.title_name}</p>
                         {data.pages.map( page => {
-                            let image_source = 'http://www.reader-rookiez-scans.com.br/reader/Capture/2/' + page;
+                            let image_source = 'http://www.reader-rookiez-scans.com.br/reader/Capture/4/' + page + '.png';
                             return (
-                            <div styles={{left:'20%'}}>
-                                          <img src={image_source} styles={{width:'720px'}}/>	
+                            <div style={{left:'20%'}} className={'item'}>
+                                          <img src={image_source} className={'img-fluid'} style={{width:'720px'}}/>	
                 		    </div>)
                         }
 
